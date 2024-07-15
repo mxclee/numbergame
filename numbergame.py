@@ -6,8 +6,6 @@ st.title('Welcome to Number Guessing Game')
 
 st.write('### where you guess a number ')
 
- 
-
 num = random.randrange(1, 4) 
 
 txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
