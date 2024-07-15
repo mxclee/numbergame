@@ -20,7 +20,7 @@ btn_guess = st.button('Make Guess')
 
 if btn_guess:
 
-    if txt_guess == num and txt_guess == num1:
+    if txt_guess == num or txt_guess == num1:
 
         st.write('You Win')
 
@@ -30,8 +30,6 @@ if btn_guess:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
 
         st.markdown(html_str, unsafe_allow_html=True)
-
-
 
 st.write('The number is ', num, 'and', num1)
 
