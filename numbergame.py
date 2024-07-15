@@ -2,6 +2,8 @@ import streamlit as st
 
 import random
 
+ 
+
 st.title('Welcome to Number Guessing Game')
 
 st.write('### where you guess a number ')
@@ -34,17 +36,25 @@ if btn_guess:
 
     else:
 
-          html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry . Try again. </h1> """
+       
 
-          st.markdown(html_str, unsafe_allow_html=True)
+        html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry . Try again. </h1> """
 
- btn_show = st.button('Show Number')
+        st.markdown(html_str, unsafe_allow_html=True)
 
- if btn_show:
+ 
+
+btn_show = st.button('Show Number')
+
+ 
+
+if btn_show:
 
     st.write('The number is ', num)
 
- with st.expander("Help..."):
+ 
+
+with st.expander("Help..."):
 
     st.write('''
 
