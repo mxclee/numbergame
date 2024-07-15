@@ -20,7 +20,7 @@ btn_guess = st.button('Make Guess')
 
 if btn_guess:
 
-    if txt_guess == num or txt_guess == num1
+    if txt_guess == num and txt_guess == num1:
 
         st.write('You Win')
 
