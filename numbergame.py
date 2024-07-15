@@ -33,7 +33,7 @@ if btn_guess:
         txt_guess1 == num1
         st.write('You win')
         st.balloons()
-    else:
+    if else:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
 
         st.markdown(html_str, unsafe_allow_html=True)
