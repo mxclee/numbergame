@@ -31,11 +31,9 @@ if btn_guess:
 
         st.markdown(html_str, unsafe_allow_html=True)
 
-btn_show = st.button('Show Number')
 
-if btn_show:
 
-    st.write('The number is ', num, 'and', num1)
+st.write('The number is ', num, 'and', num1)
 
 with st.expander("Help..."):
 
