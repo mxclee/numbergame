@@ -40,8 +40,6 @@ else:
 
 btn_start = st.button('Start Again')
 
-st.write('The number is', num, 'or', num1)
-
 with st.expander("Help..."):
 
     st.write('''
