@@ -24,10 +24,9 @@ btn_guess = st.button('Make Guess')
 
 if btn_guess:
 
-    if txt_guess == num:
+    if txt_guess == num or txt_guess1 == num1:
 
         st.write('You Win')
-        
         st.balloons()
     
     else:
@@ -35,15 +34,7 @@ if btn_guess:
 
         st.markdown(html_str, unsafe_allow_html=True)
 
-if btn_guess:
-    if txt_guess1 == num1:
-        st.write('You Win')
-        st.balloons()
-    else: 
-        html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
-
-        st.markdown(html_str, unsafe_allow_html=True)
-
+st.write('The number is', num, 'or', num1)
 
 with st.expander("Help..."):
 
