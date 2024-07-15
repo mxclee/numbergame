@@ -6,10 +6,6 @@ st.title('Welcome to Number Guessing Game')
 
 st.write('### where you guess a number ')
 
-btn_choose = st.button('Choose either 1-4 or 5-8')
-btn_one = st.button('1-4')
-btn_two = st.button('5-8')
-
 num = random.randrange(1, 4) 
 
 txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
@@ -17,6 +13,15 @@ txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 num1 = random.randrange(5, 8)
 
 txt_guess1 = int(st.text_input('Enter a number between 5 and 8: ', 5))
+
+btn_one = st.button('1-4')
+if btn_one:
+    txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
+    num = random.randrange(1, 4) 
+
+        
+
+btn_two = st.button('5-8')
 
 btn_start = st.button('Start Again')
 
