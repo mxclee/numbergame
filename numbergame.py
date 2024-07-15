@@ -27,7 +27,7 @@ if btn_guess:
     if txt_guess == num or txt_guess1 == num1:
 
         st.write('You Win')
-
+        
         st.balloons()
     
     else:
