@@ -36,7 +36,7 @@ if btn_guess:
 
           html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry . Try again. </h1> """
 
-        st.markdown(html_str, unsafe_allow_html=True)
+          st.markdown(html_str, unsafe_allow_html=True)
 
  btn_show = st.button('Show Number')
 
