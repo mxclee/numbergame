@@ -29,7 +29,10 @@ if btn_guess:
         st.write('You Win')
 
         st.balloons()
-
+    else:
+        txt_guess1 == num1
+        st.write('You win')
+        st.balloons()
     else:
         html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
 
