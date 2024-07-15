@@ -24,6 +24,7 @@ if btn_one:
             html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
 
             st.markdown(html_str, unsafe_allow_html=True)
+    st.write('The number was', num)
 
 else:
     num1 = random.randrange(5, 8)
@@ -35,10 +36,9 @@ else:
          else:
              html_str = f""" <h1 style='text-align: left; color: #FF4433;'> Sorry. Try again. </h1> """
              st.markdown(html_str, unsafe_allow_html=True)
+    st.write('The number was', num1)
 
 btn_start = st.button('Start Again')
-
-
 
 st.write('The number is', num, 'or', num1)
 
