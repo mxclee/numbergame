@@ -35,7 +35,7 @@ if btn_guess:
 
         st.markdown(html_str, unsafe_allow_html=True)
 
-st.write('The number is', num, 'and', num1)
+st.write('The number is', num, 'or', num1)
 
 with st.expander("Help..."):
 
