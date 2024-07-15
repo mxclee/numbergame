@@ -11,7 +11,8 @@ btn_two = st.button('5-8')
 if btn_one:
     num = random.randrang(1, 4)
     txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
-else btn_two:
+
+else:
     num1 = random.randrange(5, 8)
     txt_guess1 = int(st.text_input('Enter a number between 5 and 8: ', 5))
 
