@@ -7,6 +7,8 @@ st.title('Welcome to Number Guessing Game')
 st.write('### where you guess a number ')
 
 btn_choose = st.button('Choose either 1-4 or 5-8')
+btn_one = st.button('1-4')
+btn_two = st.button('5-8')
 
 num = random.randrange(1, 4) 
 
