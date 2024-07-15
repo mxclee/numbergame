@@ -35,7 +35,7 @@ btn_show = st.button('Show Number')
 
 if btn_show:
 
-    st.write('The number is ', num)
+    st.write('The number is ', num, 'and', num1)
 
 with st.expander("Help..."):
 
