@@ -12,7 +12,7 @@ txt_guess = int(st.text_input('Enter a number between 1 and 4: ', 1))
 
 num1 = random.randrange(5, 8)
 
-txt_guess = int(st.text_input('Enter a number between 5 and 8: ', 5))
+txt_guess1 = int(st.text_input('Enter a number between 5 and 8: ', 5))
 
 btn_start = st.button('Start Again')
 
@@ -20,7 +20,7 @@ btn_guess = st.button('Make Guess')
 
 if btn_guess:
 
-    if txt_guess == num and num1:
+    if txt_guess == num or txt_guess1 == num1:
 
         st.write('You Win')
 
