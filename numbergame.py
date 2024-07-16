@@ -1,5 +1,5 @@
 import streamlit as st
-
+from streamlit_agraph import agraph, Node, Edge, Config
 import random
 
 st.title('Welcome to Number Guessing Game')
