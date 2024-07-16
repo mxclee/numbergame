@@ -41,7 +41,7 @@ for index, row in df_disease.interrows():
   df_condition=dict(enumerate(final_arr_short.Condition.unique()))
   for k in df_condition:
     nodes.append( Node(id=df_condition[k],
-                       label=f", 
+                       label="f", 
                        size=200,
                        shape="circle",
                        color='#00FFFF'
