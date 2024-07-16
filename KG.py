@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_graph import agraph, Node, Edge, Config
+import pandas as pd
 st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
