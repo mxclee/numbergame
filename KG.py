@@ -55,7 +55,7 @@ df_connections = df_connections[df_connections.neighbour_name != 'na']
 for index, row in df_connections.iterrows(): #problem here too
       edges.append( Edge(source=row['Protein'],
                       label="--",
-                      target=row['neighbor_name'],
+                      target=row['neighbour_name'],
                       )
                   )
 df_mconnections = final_arr_short.filter(items=['Protein', 'Condition']).drop_duplicates()
