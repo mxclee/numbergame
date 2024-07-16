@@ -42,12 +42,12 @@ for index, row in df_disease.iterrows():
   df_condition=dict(enumerate(final_arr_short.Condition.unique()))
   for k in df_condition:
     nodes.append( Node(id=df_condition[k],
-                       label="f", 
+                       label=f"    {option} ",
                        size=200,
                        shape="circle",
                        color='#00FFFF'
                        )
-                ) # problem here
+                 ) 
 
 df_connections = final_arr_short.filter(items=['Protein', 'neighbour_name']).drop_duplicates()
 df_connections = df_connections[df_connections.neighbour_name != 'na']
