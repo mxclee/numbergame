@@ -12,6 +12,10 @@ with st.sidebar:
     ('Disease', 'CoMorbidities'))
 
 final_arr_short = final_vd[final_vd.Condition == option] 
+# initializing buckets
+nodes = []
+edges = []
+
 df_genes = dict()
 
 st.title('Knowledge Graph')
