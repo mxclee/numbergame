@@ -12,6 +12,18 @@ with st.sidebar:
     ('Disease', 'CoMorbidities'))
 
 final_arr_short = final_vd[final_vd.Condition == option] 
+df_genes = dict()
+
+st.title('Knowledge Graph')
+df_genes=dict(enumerate(final_arr_short.Protein.unique()))
+for i in df_genes:
+  nodes.append(Node(id=df_genes[i],
+                    label=df_genes[i],
+                    size=25,
+                    shape="diamond",
+                    color='#00008B'
+                   )
+              )
 
 if option == 'Disease':
      option = st.selectbox(
@@ -104,18 +116,6 @@ for index, row in df_mconnections.iterrows():
 nodes = []
 edges = []
 
-df_genes = dict()
-
-st.title('Knowledge Graph')
-df_genes=dict(enumerate(final_arr_short.Protein.unique()))
-for i in df_genes:
-  nodes.append(Node(id=df_genes[i],
-                    label=df_genes[i],
-                    size=25,
-                    shape="diamond",
-                    color='#00008B'
-                   )
-              )
 
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
