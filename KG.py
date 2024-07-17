@@ -5,26 +5,28 @@ st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
-
+#types_u = final_vd['Condition'].unique()
+types_n = final_vd['node_type'].unique()
 with st.sidebar:
   option = st.selectbox(
-    'Please select Disease or CoMordities:',
-    ('Disease', 'CoMorbidities'))
+    'Please select your type:',
+    types_n)
+
+final_arr_short1 = final_vd[final_vd.node_type == option]
+types_u = final_vd['Condition'].unique()
+
+if option:
+  with st.sidebar:
+    option2 = st.selectbox(
+      'Select your type:',
+      types_u)
+
+final_arr_short = final_arr_short1[final_arr_short1.Condition == option2]
 
 # initializing buckets
 nodes = []
 edges = []
-if option == 'Disease':
-     option1 = st.selectbox(
-    'Choose disease type:',
-    ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
-else:
-    option2 = st.selectbox(
-        'Choose CoMorbidity type:',
-        ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
 
-
-final_arr_short = final_vd[final_vd.Condition == option] 
 
 st.title('Knowledge Graph')
 df_genes = dict()
