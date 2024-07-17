@@ -4,13 +4,21 @@ import pandas as pd
 st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
-final_vd = pd.read_csv(r'./final_top5.csv')
+final_vd = pd.read_csv(r'./final_top51.csv')
 
 with st.sidebar:
   option = st.selectbox(
-    'Please select your type:',
-    ('CVA','IHD','CM','ARR','VD','CHD'))
-
+    'Please select Disease or CoMordities:',
+    ('Disease', 'CoMordities))
+    if 'Disease':
+     option = st.selectbox(
+    'Choose disease type:',
+    ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
+    else:
+      option = st.selectbox(
+        'Choose CoMordity type:',
+        ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
+      
 final_arr_short = final_vd[final_vd.Condition == option]
 
 # initializing buckets
