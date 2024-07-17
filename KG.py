@@ -5,16 +5,20 @@ st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
-# initializing buckets
-nodes = []
-edges = []
-
-df_genes = dict()
 
 with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
+
+if option == 'Disease':
+     option1 = st.selectbox(
+    'Choose disease type:',
+    ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
+else:
+    option2 = st.selectbox(
+        'Choose CoMorbidity type:',
+        ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
 
 final_arr_short = final_vd[final_vd.Condition == option] 
 
@@ -28,15 +32,6 @@ for i in df_genes:
                     color='#00008B'
                    )
               )
-
-if option == 'Disease':
-     option1 = st.selectbox(
-    'Choose disease type:',
-    ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
-else:
-    option2 = st.selectbox(
-        'Choose CoMorbidity type:',
-        ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
 
 df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_comorbidities = df_comorbidities.sort_index(axis = 0, ascending=True)
@@ -88,6 +83,14 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
+
+# initializing buckets
+nodes = []
+edges = []
+
+df_genes = dict()
+
+
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
 
