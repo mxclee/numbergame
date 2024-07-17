@@ -6,16 +6,6 @@ from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
 
-st.title('Knowledge Graph')
-df_genes=dict(enumerate(final_arr_short.Protein.unique()))
-for i in df_genes:
-  nodes.append(Node(id=df_genes[i],
-                    label=df_genes[i],
-                    size=25,
-                    shape="diamond",
-                    color='#00008B'
-                   )
-              )
 with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
@@ -31,7 +21,18 @@ else:
         'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
 
+
 final_arr_short = final_vd[final_vd.Condition == option] 
+st.title('Knowledge Graph')
+df_genes=dict(enumerate(final_arr_short.Protein.unique()))
+for i in df_genes:
+  nodes.append(Node(id=df_genes[i],
+                    label=df_genes[i],
+                    size=25,
+                    shape="diamond",
+                    color='#00008B'
+                   )
+              )
 
 df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_comorbidities = df_comorbidities.sort_index(axis = 0, ascending=True)
