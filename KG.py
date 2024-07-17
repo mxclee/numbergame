@@ -27,6 +27,8 @@ else:
 final_arr_short = final_vd[final_vd.Condition == option] 
 
 st.title('Knowledge Graph')
+df_genes = dict()
+
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
   nodes.append(Node(id=df_genes[i],
@@ -87,8 +89,6 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-
-df_genes = dict()
 
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
