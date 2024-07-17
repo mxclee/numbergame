@@ -23,7 +23,7 @@ if option:
 
 final_arr_short = final_arr_short1[final_arr_short1.Condition == option2]
 
-final_arr_short = final_vd[final_vd.Condition == option]
+final_arr_short2 = final_vd[final_vd.Condition == option]
 res = final_vd['Condition'].value_counts()\
                 .to_frame('Disease_count').rename_axis('Condition')\
                 .reset_index()
