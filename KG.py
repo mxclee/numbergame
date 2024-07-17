@@ -11,7 +11,6 @@ with st.sidebar:
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
 
-
 if option == 'Disease':
      option1 = st.selectbox(
     'Choose disease type:',
@@ -92,7 +91,6 @@ edges = []
 
 df_genes = dict()
 
-
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
 
@@ -101,11 +99,8 @@ config.save("config.json")
 config = Config(from_json="config.json")
 
 return_value = agraph(nodes=nodes,
-                        edges=edges,
-                        config=config)
-
-
-      
+                        edges=edges,
+                        config=config)
 
 
           
