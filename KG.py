@@ -52,7 +52,7 @@ for index, row in df_comorbidities.iterrows():
                         color='#56a0b3'
                         )
                     ) # includes **kwargs
-df_condition = dict()
+
 df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name != 'na']
@@ -64,6 +64,8 @@ for index, row in df_disease.iterrows():
                         color='#bf9b30'
                         )
                     ) # includes **kwargs
+
+df_condition = dict()
 df_condition=dict(enumerate(final_arr_short.Condition.unique()))
 for k in df_condition:
             nodes.append( Node(id=df_condition[k],
@@ -83,6 +85,7 @@ for index, row in df_connections.iterrows():
                       #**kwargs
                       )
                   )
+
 df_mconnections = final_arr_short.filter(items=['Protein','Condition']).drop_duplicates()
 for index, row in df_mconnections.iterrows():
       edges.append(Edge(source=row['Condition'],
