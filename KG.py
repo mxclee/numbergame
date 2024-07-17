@@ -54,7 +54,7 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-  else: 
+  else:
     option = st.selectbox(
         'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
