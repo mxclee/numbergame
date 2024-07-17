@@ -10,7 +10,6 @@ with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
-with st.selectbox:
   if Disease:
      option = st.selectbox(
     'Choose disease type:',
