@@ -6,10 +6,21 @@ from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
 
+st.title('Knowledge Graph')
+df_genes=dict(enumerate(final_arr_short.Protein.unique()))
+for i in df_genes:
+  nodes.append(Node(id=df_genes[i],
+                    label=df_genes[i],
+                    size=25,
+                    shape="diamond",
+                    color='#00008B'
+                   )
+              )
 with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
+
 
 if option == 'Disease':
      option1 = st.selectbox(
@@ -79,16 +90,6 @@ edges = []
 
 df_genes = dict()
 
-st.title('Knowledge Graph')
-df_genes=dict(enumerate(final_arr_short.Protein.unique()))
-for i in df_genes:
-  nodes.append(Node(id=df_genes[i],
-                    label=df_genes[i],
-                    size=25,
-                    shape="diamond",
-                    color='#00008B'
-                   )
-              )
 
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
