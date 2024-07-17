@@ -9,14 +9,14 @@ final_vd = pd.read_csv(r'./final_top51.csv')
 with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
-    ('Disease', 'CoMordities'))
-  if Disease:
+    ('Disease', 'CoMorbidities'))
+if Disease:
      option = st.selectbox(
     'Choose disease type:',
     ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
-  else:
+else:
       option = st.selectbox(
-        'Choose CoMordity type:',
+        'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
       
 final_arr_short = final_vd[final_vd.Condition == option]
