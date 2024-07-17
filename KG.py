@@ -25,7 +25,7 @@ for index, row in df_disease.iterrows():
                         color='#bf9b30'
                         )
                     ) # includes **kwargs
-  df_condition = dict()
+df_condition = dict()
 df_condition=dict(enumerate(final_arr_short.Condition.unique()))
 for k in df_condition:
             nodes.append( Node(id=df_condition[k],
@@ -57,7 +57,7 @@ else:
       option = st.selectbox(
         'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
-  df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
+df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_comorbidities = df_comorbidities.sort_index(axis = 0, ascending=True)
 df_comorbidities = df_comorbidities[df_comorbidities.name != 'na']
 for index, row in df_comorbidities.iterrows():
