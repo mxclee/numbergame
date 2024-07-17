@@ -10,7 +10,8 @@ with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
-if:
+with st.selectbox:
+  if Disease:
      option = st.selectbox(
     'Choose disease type:',
     ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
@@ -53,7 +54,7 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-else: 
+  else: 
       option = st.selectbox(
         'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
