@@ -23,6 +23,7 @@ else:
 
 
 final_arr_short = final_vd[final_vd.Condition == option] 
+
 st.title('Knowledge Graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
