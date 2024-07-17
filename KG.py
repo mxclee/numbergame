@@ -5,13 +5,6 @@ st.set_page_config(layout="wide")
 from streamlit_agraph.config import Config, ConfigBuilder
 
 final_vd = pd.read_csv(r'./final_top51.csv')
-
-with st.sidebar:
-  option = st.selectbox(
-    'Please select Disease or CoMordities:',
-    ('Disease', 'CoMorbidities'))
-
-final_arr_short = final_vd[final_vd.Condition == option] 
 # initializing buckets
 nodes = []
 edges = []
@@ -28,6 +21,13 @@ for i in df_genes:
                     color='#00008B'
                    )
               )
+
+with st.sidebar:
+  option = st.selectbox(
+    'Please select Disease or CoMordities:',
+    ('Disease', 'CoMorbidities'))
+
+final_arr_short = final_vd[final_vd.Condition == option] 
 
 if option == 'Disease':
      option = st.selectbox(
@@ -115,11 +115,6 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-
-# initializing buckets
-nodes = []
-edges = []
-
 
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
