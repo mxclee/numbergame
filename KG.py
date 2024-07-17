@@ -11,6 +11,9 @@ with st.sidebar:
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
 
+# initializing buckets
+nodes = []
+edges = []
 if option == 'Disease':
      option1 = st.selectbox(
     'Choose disease type:',
@@ -84,10 +87,6 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-
-# initializing buckets
-nodes = []
-edges = []
 
 df_genes = dict()
 
