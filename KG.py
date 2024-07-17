@@ -11,7 +11,7 @@ with st.sidebar:
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMorbidities'))
   
-if select Disease:
+if option = Disease:
      option = st.selectbox(
     'Choose disease type:',
     ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
