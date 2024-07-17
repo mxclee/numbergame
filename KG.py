@@ -11,6 +11,13 @@ edges = []
 
 df_genes = dict()
 
+with st.sidebar:
+  option = st.selectbox(
+    'Please select Disease or CoMordities:',
+    ('Disease', 'CoMorbidities'))
+
+final_arr_short = final_vd[final_vd.Condition == option] 
+
 st.title('Knowledge Graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
@@ -21,13 +28,6 @@ for i in df_genes:
                     color='#00008B'
                    )
               )
-
-with st.sidebar:
-  option = st.selectbox(
-    'Please select Disease or CoMordities:',
-    ('Disease', 'CoMorbidities'))
-
-final_arr_short = final_vd[final_vd.Condition == option] 
 
 if option == 'Disease':
      option = st.selectbox(
