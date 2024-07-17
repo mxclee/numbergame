@@ -49,6 +49,17 @@ for index, row in df_disease.iterrows():
                         color='#bf9b30'
                         )
                     ) # includes **kwargs
+df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
+df_comorbidities = df_comorbidities.sort_index(axis = 0, ascending=True)
+df_comorbidities = df_comorbidities[df_comorbidities.name != 'na']
+for index, row in df_comorbidities.iterrows():
+            nodes.append( Node(id=row['name'],
+                        label=row['name'],
+                        size=10 * row['count'],
+                        shape="square",
+                        color='#56a0b3'
+                        )
+                    ) # includes **kwargs
 df_condition = dict()
 df_condition=dict(enumerate(final_arr_short.Condition.unique()))
 for k in df_condition:
