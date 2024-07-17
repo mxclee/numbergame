@@ -23,33 +23,34 @@ st.title('Knowledge Graph')
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
 for i in df_genes:
   nodes.append(Node(id=df_genes[i],
-                     label=df_genes[i],
-                     size=25,
-                     shape="diamond",
-                     color='#00008B'
-                    )
-              ) # includes **kwargs
-df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name","count"])
+                    label=df_genes[i],
+                    size=25,
+                    shape="diamond",
+                    color='#00008B'
+                   )
+              )
+
+df_disease = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
 df_disease = df_disease.sort_index(axis = 0, ascending=True)
 df_disease = df_disease[df_disease.name != 'na']
 for index, row in df_disease.iterrows():
-  nodes.append( Node(id=row['name'],
-                     label=row['name'],
-                     size=10 * row['count'],
-                     shape="square",
-                     color='#bf9b30'
-                    )
-              ) # includes **kwargs
-  df_condition = dict()
-  df_condition=dict(enumerate(final_arr_short.Condition.unique()))
-  for k in df_condition:
-    nodes.append(Node(id=df_condition[k],
-                       label=f"{option}",
-                       size=200,
-                       shape="circle",
-                       color='#00FFFF'
-                       )
-                 ) # includes **kwargs
+            nodes.append( Node(id=row['name'],
+                        label=row['name'],
+                        size=10 * row['count'],
+                        shape="square",
+                        color='#bf9b30'
+                        )
+                    ) # includes **kwargs
+df_condition = dict()
+df_condition=dict(enumerate(final_arr_short.Condition.unique()))
+for k in df_condition:
+            nodes.append( Node(id=df_condition[k],
+                        label=f"          {option}          ",
+                        size=200,
+                        shape="circle",
+                        color='#00FFFF'
+                        )
+                    ) # includes **kwargs
 
 df_connections = final_arr_short.filter(items=['Protein','neighbour_name']).drop_duplicates()
 df_connections = df_connections[df_connections.neighbour_name != 'na']
