@@ -27,7 +27,7 @@ final_arr_short2 = final_vd[final_vd.Condition == option]
 res = final_vd['Condition'].value_counts()\
                 .to_frame('Disease_count').rename_axis('Condition')\
                 .reset_index()
-st.bar_chart(res,x="Condition", y="Disease_count")
+st.bar_chart(res,x="Condition", y="Disease_count", color="c67348")
 
 # initializing buckets
 nodes = []
