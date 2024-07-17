@@ -33,7 +33,7 @@ st.bar_chart(res,x="Condition", y="Disease_count")
 nodes = []
 edges = []
 
-st.title('Knowledge Graph for ('Condition')')
+st.title('Knowledge Graph for', '['Condition']')
 df_genes = dict()
 
 df_genes=dict(enumerate(final_arr_short.Protein.unique()))
