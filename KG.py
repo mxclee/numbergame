@@ -9,7 +9,7 @@ final_vd = pd.read_csv(r'./final_top51.csv')
 with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
-    ('Disease', 'CoMordities))
+    ('Disease', 'CoMordities'))
     if 'Disease':
      option = st.selectbox(
     'Choose disease type:',
