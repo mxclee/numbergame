@@ -12,9 +12,6 @@ with st.sidebar:
     ('Disease', 'CoMorbidities'))
 
 final_arr_short = final_vd[final_vd.Condition == option] 
-# initializing buckets
-nodes = []
-edges = []
 
 df_genes = dict()
 
@@ -115,7 +112,11 @@ for index, row in df_mconnections.iterrows():
                       #**kwargs
                       )
                   )
-      
+
+# initializing buckets
+nodes = []
+edges = []
+
 config_builder = ConfigBuilder(nodes)
 config = config_builder.build()
 
