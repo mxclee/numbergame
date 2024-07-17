@@ -55,7 +55,7 @@ for index, row in df_mconnections.iterrows():
                       )
                   )
   else: 
-      option = st.selectbox(
+    option = st.selectbox(
         'Choose CoMorbidity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
 df_comorbidities = pd.DataFrame(final_arr_short.neighbour_name.value_counts().reset_index().values, columns=["name", "count"])
