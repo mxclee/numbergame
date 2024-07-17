@@ -10,11 +10,11 @@ with st.sidebar:
   option = st.selectbox(
     'Please select Disease or CoMordities:',
     ('Disease', 'CoMordities'))
-    if option Disease:
+  if option Disease:
      option = st.selectbox(
     'Choose disease type:',
     ('ARR', 'CHD', 'CM', 'CVA', 'IHD', 'VD'))
-    else:
+  else:
       option = st.selectbox(
         'Choose CoMordity type:',
         ('Heart failure', 'Liver dysfunction', 'Lung dysfunction', 'Cancer', 'Liver fibrosis', 'Kidney dysfunction'))
