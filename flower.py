@@ -43,7 +43,7 @@ def get_dataset(name):
   X = data.data
   y= data.target
   return X, y, data
-  st.table(data)
+  st.table(get_dataset)
 
 X, y,data = get_dataset(dataset_name)
 st.write('Shape of dataset:', X.shape)
