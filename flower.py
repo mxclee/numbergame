@@ -108,6 +108,7 @@ st.pyplot(fig)
 
 st.write(f'{dataset_name} Dataset')
 st.dataframe(X)
+st.column_config.NumberColumn("{data.target_names}”, format=”$ %d")
 
 st.dataframe(data.target_names)
 
