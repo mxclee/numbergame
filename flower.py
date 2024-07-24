@@ -40,10 +40,10 @@ def get_dataset(name):
     data = datasets.load_wine()
   else:
     data = datasets.load_breast_cancer()
-  st.table(data)
   X = data.data
   y= data.target
   return X, y, data
+  st.table(data)
 
 X, y,data = get_dataset(dataset_name)
 st.write('Shape of dataset:', X.shape)
