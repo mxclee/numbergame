@@ -108,13 +108,4 @@ st.pyplot(fig)
 
 st.write(f'{dataset_name} Dataset')
 st.dataframe(X)
-st.data_editor(
-  X, 
-  column_config={
-    "column 1": "Name",
-    "column 2": "Name",
-    "column 3": "Name"
-  }
-)
-
-st.dataframe(data.target_names)
+similar.rename(columns= {'col1':'new_col1','col2':'new_col2'}, inplace = True)
