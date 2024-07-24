@@ -93,7 +93,7 @@ pca = PCA(2)
 X_projected = pca.fit_transform(X)
 
 x1 = X_projected[:, 0]
-x2 = X_projected[:, 1]
+x2 = X_projected[:, 1] 
 
 fig = plt.figure()
 plt.scatter(x1, x2,
