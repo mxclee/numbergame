@@ -102,4 +102,6 @@ plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 st.pyplot(fig)
+
+df = pd.DataFrame(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
 st.table(df)
