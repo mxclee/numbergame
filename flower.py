@@ -108,4 +108,4 @@ st.pyplot(fig)
 
 st.write(f'{dataset_name} Dataset')
 st.dataframe(X)
-st.column_config('load_iris()')
+
