@@ -31,16 +31,6 @@ classifier_name = st.sidebar.selectbox(
   ('K Nearest Neighbor', 'Support Vector Machine', 'Random Forest')
 )
 
-def get_dataset(name):
-  if name == 'Iris':
-    df = pd.datasets.load_iris(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
-    st.table(df)
-  elif name == 'Wine':
-    df = pd.datasets.load_wine(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
-    st.table(df)
-  else:
-    df = pd.datasets.load_breast_cancer(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
-    st.table(df)
 
 def get_dataset(name):
   data = None
@@ -50,6 +40,7 @@ def get_dataset(name):
     data = datasets.load_wine()
   else:
     data = datasets.load_breast_cancer()
+  st.table(data)
   X = data.data
   y= data.target
   return X, y, data
