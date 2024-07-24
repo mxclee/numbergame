@@ -102,3 +102,4 @@ plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 st.pyplot(fig)
+st.table(df)
