@@ -104,5 +104,4 @@ plt.colorbar()
 
 st.pyplot(fig)
 
-df = pd.get_dataset(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
-st.table(df)
+st.table(data=None)
