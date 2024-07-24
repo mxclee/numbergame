@@ -113,7 +113,7 @@ st.data_editor(
   column_config={
     "column 1": "Name",
     "column 2": "Name",
-    "column 3": "Name
+    "column 3": "Name"
   }
 
 st.dataframe(data.target_names)
