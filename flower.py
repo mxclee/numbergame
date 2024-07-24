@@ -35,10 +35,13 @@ def get_dataset(name):
   data = None
   if name == 'Iris':
     data = datasets.load_iris()
+    st.table(data)
   elif name == 'Wine':
     data = datasets.load_wine()
+    st.table(data)
   else:
     data = datasets.load_breast_cancer()
+    st.table(data)
   X = data.data
   y= data.target
   return X, y, data
@@ -104,4 +107,4 @@ plt.colorbar()
 
 st.pyplot(fig)
 
-st.table(data)
+
