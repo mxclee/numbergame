@@ -107,5 +107,11 @@ plt.colorbar()
 st.pyplot(fig)
 
 st.write(f'{dataset_name} Dataset')
-st.dataframe(X)
+ if dataset_name == 'Iris':
+    data = datasets.load_iris(as_frame=True)
+  elif dataset_name == 'Wine':
+    data1 = datasets.load_wine(as_frame=True)
+  else:
+    data2 = datasets.load_breast_cancer(as_frame=True)
+st.dataframe(data1.data)
 
