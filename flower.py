@@ -104,4 +104,4 @@ plt.colorbar()
 
 st.pyplot(fig)
 
-st.table(data=None)
+st.table(data=dataset_name)
