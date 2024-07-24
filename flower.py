@@ -33,13 +33,13 @@ classifier_name = st.sidebar.selectbox(
 
 def get_dataset(name):
   if name == 'Iris':
-    df = pd.datasets.load_iris(np.random.randn(10, 5), columns=("col %d" % i for i in range(5)))
+    df = pd.datasets.load_iris(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
     st.table(df)
   elif name == 'Wine':
-    df = pd.datasets.load_wine(np.random.randn(10, 5), columns=("col %d" % i for i in range(5)))
+    df = pd.datasets.load_wine(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
     st.table(df)
   else:
-    df = pd.datasets.load_breast_cancer(np.random.randn(10, 5), columns=("col %d" % i for i in range(5)))
+    df = pd.datasets.load_breast_cancer(np.random.randn(10, 5), columns=("col %d" % i for i in range(4)))
     st.table(df)
 
 def get_dataset(name):
