@@ -106,6 +106,8 @@ plt.colorbar()
 
 st.pyplot(fig)
 
-st.write(f'##{dataset_name} Dataset')
+st.write(f'{dataset_name} Dataset')
 st.dataframe(X)
+
+st.dataframe(data.target_names)
 
