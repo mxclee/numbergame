@@ -115,5 +115,6 @@ st.data_editor(
     "column 2": "Name",
     "column 3": "Name"
   }
+)
 
 st.dataframe(data.target_names)
