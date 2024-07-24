@@ -108,4 +108,4 @@ st.pyplot(fig)
 
 st.write(f'{dataset_name} Dataset')
 st.dataframe(X)
-similar.rename(columns= {'col1':'new_col1','col2':'new_col2'}, inplace = True)
+st.column_config('datasets.load_iris()')
